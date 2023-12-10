@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        nav{
+         
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            box-shadow: 0 -8px 32px 0 rgba(0,0,0,0.5);
+        }
+        .nav{
+           
+            flex: 1;
+            text-align: right;
+           
+        }
+        .nav li{
+            
+            list-style: none;
+            display: inline-block;
+            padding: 12px 20px;
+
+        }
+        .nav li a{
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        .nav li::after{
+            content: '';
+            width: 0;
+            display: block;
+            background: #f44336;
+            height: 2px;
+            margin: auto;
+            transition: .5s;
+        }
+        .nav li:hover::after{
+            width: 100%;
+        }
+        h1{
+            font-size: 25px;
+            color: #f44336;
+            padding: 5px 12px;
+        }
+        .box{
+            margin: 50px auto;
+            text-align: center;
+            width: 80%;
+        }
+        .row{
+            margin-top: 5%;
+            display: flex;
+            justify-content: space-between;
+            
+        }
+        .col{
+            flex-basis: 32%;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            box-sizing: border-box;
+            display: flex;
+            padding: 15px 10px;
+            transition: 1s;
+            border: 1px solid;
+        }
+        .col:hover{
+            box-shadow:  0 -8px 32px 0 rgba(0,0,0,0.5);
+        }
+        .logo{
+            display: none;
+        }
+        .logo1{
+            padding: 0 10px;
+            width: 20px;
+            display: none;
+        }
+        @media(max-width:540px){
+            .row{
+                flex-direction: column;
+            }
+            .nav{
+                flex-direction: column;
+                display: flex;
+                align-items: flex-start;
+                position: fixed;
+                right: -200px;
+                top: 0;
+                padding: 20px 12px;
+                height: 100vh;
+                width: 150px;
+                background-color: #fff;
+                box-shadow: 0 -8px 32px 0 rgba(0,0,0,0.5);
+                transition: .5s;
+            }
+
+            .nav li{
+                padding: 20px 40px;
+            }
+            .logo{
+                mix-blend-mode:hard-light;
+                display: flex;
+            }
+            .logo1{
+                display: flex;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <nav>
+            <h1>Logo</h1>
+            <ul class="nav" id="n">
+                <img src="a.png" alt="" onclick="closeNav()"   width="20px" class="logo" >
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <img src="menu.png" alt="" class="logo1" onclick="show()">
+        </nav>
+       
+    </div>
+
+    <section class="box">
+        <div class="row">
+            <div class="col">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                     Ea accusantium odit odio ipsam eligendi neque fugit vitae labore,
+                      reiciendis eos sit animi nesciunt quia dignissimos repellendus in.
+                       Cum, sequi perspiciatis.</p>
+            </div>
+            <div class="col">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Ea accusantium odit odio ipsam eligendi neque fugit vitae labore,
+                     reiciendis eos sit animi nesciunt quia dignissimos repellendus in.
+                      Cum, sequi perspiciatis.</p>
+            </div>
+            <div class="col">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Ea accusantium odit odio ipsam eligendi neque fugit vitae labore,
+                     reiciendis eos sit animi nesciunt quia dignissimos repellendus in.
+                      Cum, sequi perspiciatis.</p>
+            </div>
+        </div>
+    </section>
+
+<script>
+
+    var nav = document.getElementById("n");
+
+    function show(){
+        nav.style.right = "0px";
+    }
+  function closeNav(){
+    nav.style.right ="-200px";
+  }
+</script>
+</body>
+
+</html>
